@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='v.png') }}" type="image/x-icon"/>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Tweets Dataset Generator</title>
+</head>
+<body>
+    <!-- navbar begin -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><i class="fa fa-hand-peace"></i> TwDG</a>
+    </nav>
+    <!-- navbar end -->
+    <!-- main begin -->
+    <div class="container" style="margin-top: 50px">
+        <h1>Tweets Dataset Generator</h1>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <strong>{{ form.search.label(class="form-control-label") }}</strong>
+                {{ form.search(class="form-control form-control-lg", placeholder="e.g - IPLXXXX") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+                <a href="/download" class="btn btn-outline-success">Download Dataset</a>
+            </div>
+        </form>
+        {% if(tweets != None) %}
+        <table id="main-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tweet</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(len) %}
+                <tr>
+                    <td>{{ tweets[i].text }}</td>
+                    <td>{{ 'Postitve' if sentiments[i] == 4 else 'Negative'}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    <!-- main end -->
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" ></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</body>
+</html>
