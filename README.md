@@ -24,7 +24,7 @@ This app can be used to get a dataset of tweets with the sentiment label in .tsv
 ├── server.py
 ```
 ## Dataset
- I used the sentiment140 dataset to train my model. The dataset contains 6 columns:-
+ I used the sentiment140 dataset to train my model.The tweets have been annotated (0 = negative, 2 = neutral, 4 = positive) and they can be used to detect sentiment . The dataset contains 6 columns:-
 
 - 0 - the polarity of the tweet (0 = negative, 4 = positive)
 - 1 - the id of the tweet (2087)
