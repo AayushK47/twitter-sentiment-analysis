@@ -1,19 +1,20 @@
-'''
+"""
 Project name: twitter sentiment analysis
 Author: Aayush Kurup
 Libraries used: tweepy, nltk, pandas, flask, pickle, sklearn and os
 Start Date: 22-12-2018
 End Date: 01-02-2019
-'''
+"""
 
 # Imports
 import re
 import tweepy
 import pickle
 import pandas as pd
-#nltk.download("stopwords") # Uncomment this line if you do not have stopwords
+# nltk.download("stopwords") # Uncomment this line if you do not have stopwords
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+
 
 # A class with all the required functionalities
 class tweets_sentiment_analyzer:
@@ -51,7 +52,7 @@ class tweets_sentiment_analyzer:
 
     # A method that analyzes the tweets and returns the sentiment of the tweet (positive or negative)
     def get_sentiments(self):
-        if (self.__tweets == None):
+        if self.__tweets == None:
             return None
         else:
             tweets = []
@@ -66,7 +67,7 @@ class tweets_sentiment_analyzer:
 
     # A method that generates .tsv file for the tweets searched most recently
     def convert_to_tsv(self):
-        if (self.__tweets == None):
+        if self.__tweets == None:
             return None
         data_dict = {'Tweet': [], 'sentiment': []}
         for i in range(len(self.__tweets)):
