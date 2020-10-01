@@ -1,7 +1,7 @@
 # Twitter Tweets Sentiment Prediction
 
 ## About
-This app can be use to get a dataset of tweets with the sentiment label in .tsv format which can be use for data analysis, sentiment analysis or any other such activity. User can search for a keyword in the webpage. On submitting the search form, all the recent tweets from twitter will be shown on the webpage along with its sentiment. User can download the displayed data in .tsv by clicking on the download button.
+This app can be used to get a dataset of tweets with the sentiment label in .tsv format which can be used for data analysis, sentiment analysis, or any other such activity. Users can search for a keyword on the webpage. On submitting the search form, all the recent tweets from twitter will be shown on the webpage along with its sentiment. Users can download the displayed data in .tsv by clicking on the download button.
 
 ## Project Structure
 
